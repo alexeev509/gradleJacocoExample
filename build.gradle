@@ -13,12 +13,13 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
-
-tasks.withType(Test) {
-    finalizedBy jacocoTestReport
+//https://docs.gradle.org/current/userguide/jacoco_plugin.html
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
 }
 
 jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
     reports {
         xml.enabled true
         xml.destination(file("${project.buildDir}/reports/jacoco/all-tests/jacocoAllTestReport.xml"))
