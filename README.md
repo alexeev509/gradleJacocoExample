@@ -14,3 +14,5 @@ On Linux this command maybe: "./gradlew test" (but i'm not sure) <br />
 
 Or you can run this command "test" with idea user interface (for gradle) <br />
 
+Than you can open package build->jacocoHtml->index.html (open this in google chrome); And you will see metrics
+
